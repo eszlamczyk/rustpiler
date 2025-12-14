@@ -2,3 +2,5 @@ target
 
 C/*
 !C/*.c
+
+.vscode/
