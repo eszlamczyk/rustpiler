@@ -17,6 +17,8 @@ fn main() -> std::io::Result<()> {
     Ok(())
 }
 
+// playground
+
 fn add_function_prefix(
         file: &mut File,
         function_name: &str,

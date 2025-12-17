@@ -13,3 +13,8 @@ long sex(int a) {
 int main() {
     return 1;
 }
+
+int adder2(int a) {
+    a++;
+    return a + 2;
+}
