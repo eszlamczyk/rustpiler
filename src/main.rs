@@ -1,5 +1,6 @@
+use std::io::Write;
 use std::fs::File;
-use std::io::prelude::*;
+use std::fmt::Write as _;
 
 mod instructions;
 
@@ -13,6 +14,22 @@ fn main() -> std::io::Result<()> {
     add_fixsum_function(&mut f, "sex", 69)?;
     add_addx_function(&mut f, "add2", 2)?;
     add_removex_function(&mut f, "remove3", 3)?;
+    Ok(())
+}
+
+fn add_function_prefix(
+        file: &mut File,
+        function_name: &str,
+        function_body: &String
+) -> std::io::Result<()> {
+    let mut buf = String::new();
+
+    write!(buf, "    .global {function_name}\n").unwrap();
+    write!(buf, "    .type  {function_name}\n").unwrap();
+    write!(buf, "{function_name}:\n").unwrap();
+    buf.push_str(&function_body);
+
+    file.write_all(buf.as_bytes())?;
     Ok(())
 }
 

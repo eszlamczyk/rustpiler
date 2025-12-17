@@ -1,5 +1,5 @@
 pub fn mov(source: &String, destination: &String, size: &str) -> String {
-    format!("    mov{} {},{}\n", size, source, destination)
+    format!("    mov{size} {source},{destination}\n")
 }
 
 pub fn push_stack() -> String {

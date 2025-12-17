@@ -1,11 +1,13 @@
 
 
-long sex() {
-    long a = 1 << 31;
+long sex(int a) {
 
-    char c = 'a';
-
-    return (long) (a + c);
+    if (a < 2) {
+        return 0;
+    }
+    else {
+        return 69;
+    }
 }
 
 int main() {
